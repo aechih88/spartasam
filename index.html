@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>스파르타샘 재수기숙학원 — 월 100만원대, 도심 1인실</title>
+<meta name="description" content="외딴 산속 다인실 월 300만원? 도심 원룸형 1인실 월 100만원대로 재수 환경의 패러다임을 바꿉니다." />
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+<style>
+  :root{
+    --red:#b90920;       /* 스파르타샘 메인 */
+    --red-d:#8e0e1f;     /* 다크 레드 */
+    --red-l:#ff2b47;     /* 포인트 형광 */
+    --ink:#111111;
+    --ink-2:#212121;
+    --bg:#ffffff;
+    --soft:#f5f5f5;
+    --line:#e5e5e5;
+    --mute:#757575;
+    --kakao:#fee500;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html{background:#ddd}
+  body{margin:0 auto;padding:0;background:var(--bg);color:var(--ink);
+    font-family:'Pretendard','Pretendard Variable',-apple-system,BlinkMacSystemFont,system-ui,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.55;letter-spacing:-0.015em;
+    max-width:390px;min-height:100vh;
+    box-shadow:0 0 60px rgba(0,0,0,.18);
+    padding-bottom:72px}
+  @media (min-width:430px){
+    html{padding:24px 0}
+    body{border-radius:24px}
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{margin:0;letter-spacing:-0.03em;line-height:1.2;font-weight:800}
+  h1{font-size:30px}
+  h2{font-size:24px}
+  h3{font-size:18px}
+  p{margin:0;font-size:14px;line-height:1.6}
+  .wrap{padding:0 20px}
+  .red{color:var(--red)}
+  .strike{text-decoration:line-through;color:var(--mute)}
+  .eyebrow{display:inline-block;font-size:11px;letter-spacing:.18em;
+    text-transform:uppercase;font-weight:800;margin-bottom:10px;color:var(--red)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;
+    padding:14px 18px;border-radius:10px;font-weight:800;font-size:14px;
+    cursor:pointer;border:0;width:100%}
+  .btn-cta{background:var(--red);color:#fff;
+    box-shadow:0 8px 20px rgba(185,9,32,.35)}
+  .btn-cta:active{background:var(--red-d)}
+  .btn-kakao{background:var(--kakao);color:#3c1e1e}
+  .btn-dark{background:var(--ink);color:#fff}
+  section{padding:56px 0}
+
+  /* ===== NAV ===== */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:54px;padding:0 16px}
+  .brand{font-weight:900;font-size:16px}
+  .brand .sub{color:var(--red)}
+  .nav .btn{padding:8px 14px;font-size:12px;width:auto;border-radius:8px}
+
+  /* ===== 1. HERO ===== */
+  .hero{background:linear-gradient(180deg,#fff 0%, #fff5f6 100%);
+    padding:32px 0 40px;text-align:center;border-bottom:4px solid var(--red)}
+  .hero h1{font-size:32px;line-height:1.18;margin-bottom:14px}
+  .hero h1 .em{color:var(--red);background:linear-gradient(180deg, transparent 60%, #ffe8eb 60%);padding:0 4px}
+  .hero .lead{color:#444;font-size:14px;margin:0 16px 20px;line-height:1.6}
+
+  .vs-stack{display:flex;flex-direction:column;gap:10px;padding:0 20px;margin-bottom:18px}
+  .vs-card{border-radius:14px;padding:14px 16px;text-align:left;display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);background:#fff}
+  .vs-card.bad{opacity:.85}
+  .vs-card.bad .pri{color:#999;text-decoration:line-through;font-size:14px}
+  .vs-card.good{border:2px solid var(--red);background:#fff5f6}
+  .vs-card .lbl{font-size:11px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;font-weight:700}
+  .vs-card .ttl{font-weight:700;font-size:13px;line-height:1.4}
+  .vs-card .pri{font-weight:900;font-size:18px;color:var(--red)}
+  .vs-vs{align-self:center;font-weight:900;color:var(--mute);font-size:12px;letter-spacing:.2em}
+
+  .price-card{margin:0 20px;background:var(--ink);color:#fff;border-radius:18px;padding:20px;text-align:left}
+  .price-card .lbl{font-size:11px;color:#bbb;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+  .price-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+  .price-old{font-size:14px;color:#999;text-decoration:line-through}
+  .badge-cut{display:inline-block;background:var(--red);color:#fff;font-weight:800;padding:3px 8px;border-radius:6px;font-size:12px}
+  .price-new{font-size:38px;font-weight:900;letter-spacing:-.04em;line-height:1}
+  .price-new small{font-size:14px;color:var(--red-l);margin-left:4px;font-weight:700}
+  .price-card ul{margin:14px 0 0;padding:0;list-style:none;color:#ddd;font-size:13px;line-height:1.8}
+  .price-card ul li::before{content:"✓ ";color:var(--red-l);font-weight:900}
+
+  .hero-cta{padding:18px 20px 0;display:flex;flex-direction:column;gap:8px}
+  .scarcity{margin:14px 20px 0;display:inline-flex;align-items:center;gap:8px;
+    background:#fff0f2;border:1px solid #ffc4cb;
+    padding:10px 14px;border-radius:10px;font-size:12px;color:var(--red-d);font-weight:700;justify-content:center}
+  .scarcity .dot{width:7px;height:7px;border-radius:99px;background:var(--red);
+    box-shadow:0 0 0 3px rgba(185,9,32,.18)}
+
+  /* ===== 2. PROBLEM ===== */
+  .problem{background:#0a0a0a;color:#fff}
+  .problem h2{font-size:26px;text-align:center;margin-bottom:10px;line-height:1.3;padding:0 16px}
+  .problem h2 .ul{border-bottom:3px solid var(--red);padding-bottom:2px}
+  .problem .sub{text-align:center;color:#999;margin:0 16px 32px;font-size:13px}
+  .bubbles{display:flex;flex-direction:column;gap:10px;padding:0 24px}
+  .bubble{background:#2a2a2a;color:#fff;border-radius:14px 14px 14px 4px;
+    padding:14px 16px;font-size:14px;font-weight:500;line-height:1.5;align-self:flex-start;max-width:88%}
+  .bubble.yellow{background:#ffe600;color:#1a1a1a;border-radius:14px 14px 4px 14px;align-self:flex-end}
+  .bubble strong{color:var(--red-l);font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+  .bubble.yellow strong{color:var(--red-d)}
+  .problem-foot{text-align:center;margin:24px 16px 0;font-size:15px;color:#ddd}
+  .problem-foot b{color:#fff}
+  .problem-list{margin:24px 20px 0;display:flex;flex-direction:column;gap:8px}
+  .problem-list div{border:1px solid #2a2a2a;border-radius:10px;padding:14px;text-align:center;font-size:13px;color:#bbb}
+  .problem-list div b{display:block;color:#fff;font-size:14px;margin-bottom:3px}
+  .problem-end{text-align:center;margin:24px 16px 0;color:#ddd;font-size:14px}
+  .problem-end b{color:#fff}
+
+  /* ===== 3. TURN ===== */
+  .turn{background:#fff;text-align:center;padding:56px 20px}
+  .turn .x{display:inline-block;color:var(--red);font-size:48px;font-weight:900;line-height:1}
+  .turn h2{font-size:30px;margin:14px 0 12px;line-height:1.2}
+  .turn h2 .strike{color:#aaa;font-size:22px;display:block;margin-bottom:4px}
+  .turn .arrow{font-size:24px;color:var(--mute);margin:14px 0 12px}
+  .turn .answer{display:inline-block;background:#fff0f2;border:2px solid var(--red);
+    color:var(--red-d);font-weight:800;font-size:15px;padding:10px 18px;border-radius:10px;margin-bottom:24px;line-height:1.4}
+  .turn-3{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+  .turn-3 div{padding:18px;border:1px solid var(--line);border-radius:12px;text-align:left}
+  .turn-3 .ic{font-weight:900;color:var(--red);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+  .turn-3 b{display:block;font-size:16px;margin-bottom:4px}
+  .turn-3 p{font-size:13px;color:var(--mute)}
+  .turn-claim{margin-top:8px;font-size:16px;font-weight:700;line-height:1.55}
+  .turn-claim .red{color:var(--red)}
+
+  /* ===== 4. PACK ===== */
+  .packs{background:var(--soft);padding:56px 0}
+  .packs h2{text-align:center;font-size:26px;margin:0 16px 10px}
+  .packs .sub{text-align:center;color:var(--mute);margin:0 16px 32px;font-size:13px}
+  .pack{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:0 16px 14px;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+  .pack-vis{background:linear-gradient(135deg,#1a1a1a,#2a0e10);min-height:170px;color:#fff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+  .pack-vis .ph{font-size:11px;color:#666;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:0 20px}
+  .pack-body{padding:22px 20px}
+  .pack-tag{display:inline-flex;align-items:center;gap:6px;background:var(--red);color:#fff;
+    font-weight:800;font-size:11px;padding:5px 10px;border-radius:6px;letter-spacing:.05em}
+  .pack-body h3{font-size:20px;margin:10px 0 8px;line-height:1.3}
+  .pack-body .lead{color:var(--mute);font-size:13px;margin-bottom:16px;line-height:1.55}
+  .check-list{list-style:none;margin:0;padding:0}
+  .check-list li{display:flex;gap:8px;align-items:flex-start;padding:6px 0;font-size:13px;line-height:1.5}
+  .check-list li::before{content:"";width:18px;height:18px;border-radius:5px;background:var(--red);
+    flex:0 0 18px;margin-top:2px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5 10l3 3 7-7' stroke='white' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat:no-repeat;background-position:center}
+  .pack-price{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--mute)}
+  .pack-price b{color:var(--ink);font-size:14px}
+
+  /* PACK 1 단면도 */
+  .cutaway{position:relative;width:90%;max-width:280px;height:140px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12)}
+  .floor{position:absolute;left:10px;right:10px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);display:flex;align-items:center;justify-content:space-between;padding:0 12px;color:#ddd;font-weight:700;font-size:12px}
+  .floor.t{top:14px;border-color:rgba(255,43,71,.5);background:rgba(255,43,71,.08)}
+  .floor.b{top:88px;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
+  .floor small{display:block;font-weight:500;font-size:9px;color:#999;margin-top:1px}
+  .lift{position:absolute;left:50%;transform:translateX(-50%);top:54px;width:24px;height:30px;border:1px dashed rgba(255,255,255,.25);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#999;font-size:8px}
+  .zerom-tag{position:absolute;right:-6px;top:50%;transform:translateY(-50%);background:var(--red);color:#fff;font-weight:900;font-size:11px;padding:5px 8px;border-radius:6px;letter-spacing:.04em}
+
+  .pack-sum{margin:24px 16px 0;text-align:center;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:18px;font-size:14px;line-height:1.6}
+  .pack-sum b{font-size:16px}
+  .pack-sum .red{font-size:22px}
+
+  /* ===== 5. CHECKLIST ===== */
+  .target{background:#fff;padding:56px 0}
+  .target h2{text-align:center;font-size:26px;margin:0 16px 10px;line-height:1.3}
+  .target .sub{text-align:center;color:var(--mute);margin:0 16px 28px;font-size:13px}
+  .checks{padding:0 20px}
+  .check-row{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5}
+  .check-row:last-of-type{border-bottom:0}
+  .check-box{width:24px;height:24px;border-radius:6px;background:var(--red);flex:0 0 24px;margin-top:1px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path d='M5 10l3 3 7-7' stroke='white' stroke-width='2.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat:no-repeat;background-position:center}
+  .check-call{margin:24px 16px 0;background:#fff5f6;border:2px solid var(--red);
+    text-align:center;padding:18px;border-radius:12px;font-size:14px;font-weight:700;line-height:1.5}
+  .check-call b{color:var(--red)}
+  .check-call .btn{margin-top:12px;width:100%}
+
+  /* ===== 6. BEFORE / AFTER ===== */
+  .ba{background:#0a0a0a;color:#fff;padding:56px 0}
+  .ba h2{text-align:center;font-size:26px;margin:0 16px 10px}
+  .ba .sub{text-align:center;color:#999;margin:0 16px 28px;font-size:13px}
+  .cards{display:flex;flex-direction:column;gap:10px;padding:0 16px;margin-bottom:18px}
+  .ba-card{background:#15151c;border:1px solid #262633;border-radius:14px;padding:18px}
+  .ba-card .who{font-weight:700;font-size:13px;color:#ddd;margin-bottom:10px}
+  .ba-grade{display:flex;align-items:center;gap:10px;margin:6px 0}
+  .grade{display:inline-flex;align-items:center;justify-content:center;
+    width:46px;height:46px;border-radius:10px;font-size:18px;font-weight:900}
+  .grade.before{background:rgba(255,43,71,.15);color:var(--red-l);border:1px solid rgba(255,43,71,.4)}
+  .grade.after{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.25)}
+  .ba-arrow{color:var(--red);font-weight:900;font-size:18px}
+  .ba-quote{margin-top:10px;color:#bbb;font-size:13px;line-height:1.5;font-style:italic}
+  .ba-meta{margin-top:10px;font-size:11px;color:#888}
+
+  .ba-summary{margin:0 16px;background:#15151c;border:1px solid #262633;border-radius:14px;padding:22px;text-align:center;font-size:14px;line-height:1.6}
+  .ba-summary .num{font-size:36px;font-weight:900;color:var(--red-l);display:block;letter-spacing:-.03em}
+
+  .parent-quotes{margin:24px 16px 0;display:flex;flex-direction:column;gap:10px}
+  .pq{padding:16px;background:#15151c;border:1px solid #262633;border-radius:12px;color:#bbb;font-size:13px;line-height:1.5;font-style:italic}
+  .pq::before{content:"\201C";color:var(--red);font-size:30px;line-height:0;display:block;margin-bottom:4px;font-style:normal}
+  .pq b{color:#ddd;display:block;margin-top:8px;font-style:normal;font-size:12px;font-weight:700}
+
+  /* ===== 7. SATISFACTION ===== */
+  .sat{background:linear-gradient(180deg, var(--red) 0%, var(--red-d) 100%);
+    color:#fff;text-align:center;padding:56px 20px}
+  .sat .stars{font-size:24px;letter-spacing:6px;color:#ffe600;margin-bottom:8px}
+  .sat .big{font-size:84px;font-weight:900;line-height:1;letter-spacing:-.05em;margin:6px 0}
+  .sat .big small{font-size:32px}
+  .sat .label{font-size:14px;color:#ffd9de;margin-bottom:24px;font-weight:600}
+  .sat-grid{display:flex;flex-direction:column;gap:8px}
+  .sat-cell{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px;display:flex;justify-content:space-between;align-items:center}
+  .sat-cell .n{font-size:28px;font-weight:900;letter-spacing:-.03em}
+  .sat-cell .l{font-size:13px;color:#ffd9de}
+  .sat .stamp{margin-top:18px;display:inline-block;border:1px dashed rgba(255,255,255,.5);padding:6px 12px;border-radius:99px;font-size:11px;color:#ffd9de;letter-spacing:.05em}
+
+  /* ===== 8. OPS ===== */
+  .ops{background:#fff;padding:56px 0}
+  .ops h2{text-align:center;font-size:26px;margin:0 16px 10px;line-height:1.3}
+  .ops .sub{text-align:center;color:var(--mute);margin:0 16px 28px;font-size:13px}
+  .ops-grid{display:flex;flex-direction:column;gap:10px;padding:0 16px}
+  .ops-card{padding:20px;border:1px solid var(--line);border-radius:14px;background:#fafafa}
+  .ops-card .role{font-size:11px;color:var(--red);font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+  .ops-card h3{font-size:17px;margin:6px 0 8px}
+  .ops-card p{font-size:13px;color:var(--mute);line-height:1.55}
+  .ops-card .pill{display:inline-block;margin-top:10px;background:var(--ink);color:#fff;
+    font-size:11px;padding:4px 8px;border-radius:99px}
+  .ops-foot{margin:18px 16px 0;background:#fff5f6;border:1px solid #ffc4cb;border-radius:14px;padding:20px;text-align:center}
+  .ops-foot b{font-size:15px;display:block;margin-bottom:4px}
+  .ops-foot p{color:var(--mute);font-size:13px;margin-bottom:14px}
+
+  /* ===== 9. FINAL CTA ===== */
+  .final{background:linear-gradient(180deg,#0a0a0a 0%, #1a0a0c 100%);color:#fff;padding:56px 0;position:relative;overflow:hidden}
+  .final-left{padding:0 20px;margin-bottom:24px;text-align:center}
+  .final-left h2{font-size:28px;line-height:1.25;margin-bottom:14px}
+  .final-left h2 .red{color:var(--red-l)}
+  .final-left .lead{color:#bbb;font-size:14px;margin-bottom:20px}
+  .final-price{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px;margin-bottom:14px;text-align:left}
+  .final-price .old{color:#999;text-decoration:line-through;font-size:13px;margin-bottom:4px}
+  .final-price .new{font-size:34px;font-weight:900;letter-spacing:-.04em;line-height:1}
+  .final-price .new small{font-size:14px;color:var(--red-l);margin-left:4px;font-weight:700}
+  .final-price .cut{display:inline-block;background:var(--red);color:#fff;font-weight:800;
+    padding:4px 8px;border-radius:5px;font-size:12px;margin-left:6px;vertical-align:middle}
+  .final-scarcity{display:flex;align-items:center;gap:8px;background:rgba(255,43,71,.12);
+    border:1px solid rgba(255,43,71,.4);padding:12px 14px;border-radius:10px;font-size:13px;justify-content:center}
+  .final-scarcity .dot{width:8px;height:8px;border-radius:99px;background:var(--red-l);box-shadow:0 0 0 4px rgba(255,43,71,.18)}
+  .final-warn{margin-top:10px;font-size:11px;color:#666;line-height:1.5;padding:0 6px}
+
+  /* Form */
+  .form{background:#fff;color:#0a0a0a;border-radius:18px;padding:24px 20px;margin:0 16px;
+    box-shadow:0 20px 50px rgba(0,0,0,.45)}
+  .form h3{font-size:18px;margin-bottom:4px}
+  .form .fsub{color:var(--mute);font-size:12px;margin-bottom:18px}
+  .field{margin-bottom:12px}
+  .field label{display:block;font-size:12px;font-weight:700;margin-bottom:5px;color:#333}
+  .field input, .field select, .field textarea{
+    width:100%;padding:12px 12px;border:1px solid var(--line);border-radius:9px;
+    font-size:14px;font-family:inherit;background:#fff;color:#0a0a0a;-webkit-appearance:none;appearance:none}
+  .field select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 12px center;padding-right:32px}
+  .field input:focus, .field select:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 3px rgba(185,9,32,.1)}
+  .agree{display:flex;align-items:flex-start;gap:6px;font-size:11px;color:var(--mute);margin:10px 0 14px;line-height:1.5}
+  .agree input{margin-top:3px;flex:0 0 auto}
+  .form .btn{padding:16px;font-size:15px;border-radius:10px}
+  .form-or{text-align:center;margin:12px 0;color:var(--mute);font-size:11px;letter-spacing:.06em}
+  .form-or::before, .form-or::after{content:"";display:inline-block;width:50px;height:1px;background:var(--line);vertical-align:middle;margin:0 8px}
+
+  /* ===== FAQ ===== */
+  .faq-sec{background:#fafafa;padding:56px 0}
+  .faq-sec h2{text-align:center;font-size:24px;margin:0 16px 8px}
+  .faq-sec .sub{text-align:center;color:var(--mute);margin:0 16px 24px;font-size:13px}
+  .faq{padding:0 16px}
+  details{border:1px solid var(--line);background:#fff;border-radius:12px;
+    padding:14px 16px;margin-bottom:8px}
+  details[open]{border-color:var(--red)}
+  summary{list-style:none;cursor:pointer;font-weight:700;display:flex;
+    justify-content:space-between;gap:12px;align-items:center;font-size:14px;line-height:1.4}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-size:20px;line-height:1;color:var(--red);flex:0 0 auto}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:10px;color:#444;font-size:13px;line-height:1.6}
+
+  /* ===== FOOTER ===== */
+  footer{background:#0a0a0a;color:#888;padding:28px 20px;font-size:11px;text-align:center;line-height:1.7}
+  footer b{color:#bbb;display:block;margin-bottom:4px}
+
+  /* ===== STICKY CTA ===== */
+  .sticky{position:fixed;left:50%;transform:translateX(-50%);bottom:0;z-index:60;
+    width:100%;max-width:390px;display:flex;
+    padding:8px 12px calc(8px + env(safe-area-inset-bottom));
+    background:rgba(10,10,10,.96);backdrop-filter:blur(8px);
+    border-top:1px solid #2a2a2a;gap:6px}
+  .sticky .btn{flex:1;padding:13px 0;font-size:13px;border-radius:9px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">스파르타샘 <span class="sub">대치팀</span></div>
+    <a class="btn btn-cta" href="#cta">상담 신청</a>
+  </div>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div style="padding:0 20px">
+    <span class="eyebrow">2026 정원 한정 모집</span>
+    <h1>절반 가격에<br/><span class="em">두 배 쾌적함.</span></h1>
+    <p class="lead">재수 성공, 환경이 8할입니다.<br/>외딴 산속 다인실이 아닌,<br/>도심 속 원룸형 1인실에서 시작하세요.</p>
+  </div>
+
+  <div class="vs-stack">
+    <div class="vs-card bad">
+      <div>
+        <div class="lbl">기존 기숙학원</div>
+        <div class="ttl">외딴 산속 · 다인실</div>
+      </div>
+      <div class="pri">월 300만원</div>
+    </div>
+    <div class="vs-vs">VS</div>
+    <div class="vs-card good">
+      <div>
+        <div class="lbl">스파르타샘</div>
+        <div class="ttl">도심 · 원룸형 1인실</div>
+      </div>
+      <div class="pri">월 100만원대</div>
+    </div>
+  </div>
+
+  <div class="price-card">
+    <div class="lbl">월 비용</div>
+    <div class="price-row">
+      <div class="price-old">월 300만원</div>
+      <div class="badge-cut">−50%</div>
+    </div>
+    <div class="price-new">100만원대<small>/ 월</small></div>
+    <ul>
+      <li>1인 전용 화장실·세탁기·냉장고</li>
+      <li>학원·기숙사 동일 건물 (9F·11F)</li>
+      <li>뷔페식 3식 + 24시간 사감 케어</li>
+    </ul>
+  </div>
+
+  <div class="hero-cta">
+    <a href="#cta" class="btn btn-cta">무료 학습진단 신청</a>
+    <a href="#cta" class="btn btn-kakao">카카오 1:1 상담</a>
+  </div>
+
+  <div class="scarcity">
+    <span class="dot"></span>1인실 잔여 7석 · 다음 기수 6개월 후
+  </div>
+</header>
+
+<!-- ============ 2. PROBLEM ============ -->
+<section class="problem">
+  <h2>재수, 환경을 잘못 고르면<br/><span class="ul">1년이 사라집니다.</span></h2>
+  <p class="sub">평균 비용 1년 3,000만원,<br/>정말 그만한 가치가 있을까요?</p>
+
+  <div class="bubbles">
+    <div class="bubble">"룸메이트 <strong>코골이</strong>에 잠을 못 자요"</div>
+    <div class="bubble yellow">"창문을 <strong>방음벽</strong>으로 다 막아 답답해요"</div>
+    <div class="bubble">"밥이 너무 <strong>맛없어서</strong> 힘들어요"</div>
+  </div>
+
+  <p class="problem-foot">…<b>익숙한 이야기</b>입니다.</p>
+
+  <div class="problem-list">
+    <div><b>1. 다인실 갈등</b>수면·집중력 붕괴</div>
+    <div><b>2. 외딴 산속 고립감</b>멘탈 케어 어려움</div>
+    <div><b>3. 월 300만원 부담</b>가족 경제 압박</div>
+  </div>
+  <p class="problem-end">이 세 가지가 <b>재수 실패의 원인</b>입니다.</p>
+</section>
+
+<!-- ============ 3. TURN ============ -->
+<section class="turn">
+  <span class="x">✕</span>
+  <h2><span class="strike">비싸야 좋은 학원?</span>NO.</h2>
+  <div class="arrow">↓</div>
+  <div class="answer">재수의 성공은<br/>이 3가지에서 시작합니다</div>
+
+  <div class="turn-3">
+    <div><div class="ic">01</div><b>잠 잘 자는 1인실</b><p>수면의 질이 곧 등급입니다.</p></div>
+    <div><div class="ic">02</div><b>답답하지 않은 도심</b><p>면회·외진료가 자유로운 입지.</p></div>
+    <div><div class="ic">03</div><b>부담 없는 비용</b><p>가족 경제를 지키는 합리적 가격.</p></div>
+  </div>
+
+  <p class="turn-claim">스파르타샘은<br/><span class="red">도심 + 원룸형 1인실 + 월 100만원대</span>로,<br/>재수 환경의 패러다임을 바꿉니다.</p>
+</section>
+
+<!-- ============ 4. PACK ============ -->
+<section class="packs">
+  <h2>3개의 PACK으로<br/>재수 1년을 완성합니다</h2>
+  <p class="sub">시설 / 입지·식사 / 학습관리<br/>가치는 누적됩니다.</p>
+
+  <div class="pack">
+    <div class="pack-vis">
+      <div class="cutaway">
+        <div class="floor t"><div>11F<small>청우 1인실</small></div><div style="color:#999;font-size:9px">SLEEP</div></div>
+        <div class="lift">LIFT</div>
+        <div class="floor b"><div>9F<small>학원 자습실</small></div><div style="color:#999;font-size:9px">FOCUS</div></div>
+        <div class="zerom-tag">통학 0분</div>
+      </div>
+    </div>
+    <div class="pack-body">
+      <span class="pack-tag">PACK 01</span>
+      <h3>원룸급 1인실 풀옵션</h3>
+      <p class="lead">학원 9F · 기숙사 11F.<br/>같은 건물에서 끝내는 1인 학습공간.</p>
+      <ul class="check-list">
+        <li>1인 전용 화장실 · 샤워실</li>
+        <li>1인 전용 세탁기 · 냉장고</li>
+        <li>접이식 침대 (낮엔 학습공간 확장)</li>
+        <li>인체공학 학습 책상 · 의자</li>
+        <li>개별 냉난방 조절</li>
+        <li>학원 직통 엘리베이터 1분</li>
+      </ul>
+      <div class="pack-price">시중 동급 시설 환산 가치 · <b>월 200만원 상당</b></div>
+    </div>
+  </div>
+
+  <div class="pack">
+    <div class="pack-vis"><div class="ph">[도심 전경 + 식당 사진]</div></div>
+    <div class="pack-body">
+      <span class="pack-tag">PACK 02</span>
+      <h3>도심 입지 + 뷔페식 3식</h3>
+      <p class="lead">시우역 도보 10분.<br/>외진·면회·재충전 모두 5분 내.</p>
+      <ul class="check-list">
+        <li>뷔페식 조·중·석 (영양사 식단)</li>
+        <li>대학병원 차량 15분 (응급 대응)</li>
+        <li>주말 면회 자유 · 부모 멘탈 케어</li>
+        <li>편의점·식당가·운동시설 도보권</li>
+        <li>건물 내 무료 주차 (B1~7F)</li>
+        <li>시우역 3번 출구 도보 10분</li>
+      </ul>
+      <div class="pack-price">도심 입지 프리미엄 · <b>월 80만원 상당</b></div>
+    </div>
+  </div>
+
+  <div class="pack">
+    <div class="pack-vis"><div class="ph">[자습실 풀샷 + 리포트 캡처]</div></div>
+    <div class="pack-body">
+      <span class="pack-tag">PACK 03</span>
+      <h3>개별 학습관리 시스템</h3>
+      <p class="lead">대치동 직강 + 1:1 코칭<br/>+ 주간 학부모 리포트.</p>
+      <ul class="check-list">
+        <li>대치동 현직 강사진 직강</li>
+        <li>1:1 학습진단 · 주간 약점 리포트</li>
+        <li>클래스업캠 라이브 모니터링</li>
+        <li>매니저 1인당 학생 12명 (업계 평균 25명)</li>
+        <li>전자기기 등원 시 제출</li>
+        <li>주간 학부모 리포트 발송</li>
+      </ul>
+      <div class="pack-price">대치동 직강 + 풀관리 · <b>월 220만원 상당</b></div>
+    </div>
+  </div>
+
+  <div class="pack-sum">
+    합산 가치 <b>월 500만원 상당</b><br/>→ 실제 비용 <span class="red"><b>월 100만원대</b></span>
+  </div>
+</section>
+
+<!-- ============ 5. CHECKLIST ============ -->
+<section class="target">
+  <h2>이런 분들에게<br/>강력 추천합니다</h2>
+  <p class="sub">3개 이상 해당된다면, 지금 상담받으세요.</p>
+
+  <div class="checks">
+    <div class="check-row"><div class="check-box"></div>다인실 룸메이트 갈등이 두려운 학생</div>
+    <div class="check-row"><div class="check-box"></div>외딴 산속 고립감을 못 견디는 학생</div>
+    <div class="check-row"><div class="check-box"></div>월 300만원이 부담스러운 학부모</div>
+    <div class="check-row"><div class="check-box"></div>수면의 질이 곧 등급인 학생</div>
+    <div class="check-row"><div class="check-box"></div>면회·외진료가 자유로워야 하는 가정</div>
+    <div class="check-row"><div class="check-box"></div>뷔페식으로 컨디션 관리하고 싶은 학생</div>
+    <div class="check-row"><div class="check-box"></div>합리적 비용으로 최고 환경을 원하는 가정</div>
+  </div>
+
+  <div class="check-call">3개 이상이라면, <b>지금 무료 학습진단</b>을 받아보세요.
+    <a href="#cta" class="btn btn-cta">상담 신청하러 가기 →</a></div>
+</section>
+
+<!-- ============ 6. BEFORE → AFTER ============ -->
+<section class="ba">
+  <h2>환경이 바꾼 숫자</h2>
+  <p class="sub">스파르타샘 1인실 환경에서<br/>만들어진 실제 등급 변화</p>
+
+  <div class="cards">
+    <div class="ba-card">
+      <div class="who">K군 · N수 · 국어</div>
+      <div class="ba-grade">
+        <div class="grade before">5</div>
+        <div class="ba-arrow">→</div>
+        <div class="grade after">2</div>
+      </div>
+      <p class="ba-quote">"수면시간 4시간에서 7시간으로. 1인실이 등급을 바꿨습니다."</p>
+      <div class="ba-meta">수면 4h → 7h</div>
+    </div>
+    <div class="ba-card">
+      <div class="who">L양 · 재수 · 수학</div>
+      <div class="ba-grade">
+        <div class="grade before">4</div>
+        <div class="ba-arrow">→</div>
+        <div class="grade after">1</div>
+      </div>
+      <p class="ba-quote">"룸메 스트레스가 없으니 집중력이 완전히 달라졌어요."</p>
+      <div class="ba-meta">수학 4 → 1등급</div>
+    </div>
+    <div class="ba-card">
+      <div class="who">P군 학부모 · 탐구</div>
+      <div class="ba-grade">
+        <div class="grade before">3</div>
+        <div class="ba-arrow">→</div>
+        <div class="grade after">1</div>
+      </div>
+      <p class="ba-quote">"도심이라 주말 면회로 멘탈을 잡아줄 수 있었습니다."</p>
+      <div class="ba-meta">주말 면회 가능</div>
+    </div>
+  </div>
+
+  <div class="ba-summary">
+    작년 산속 다인실 학원 평균 +0.5등급<br/>
+    <span class="num">+1.8등급</span>
+    올해 본원 도심 1인실 평균 상승폭
+  </div>
+
+  <div class="parent-quotes">
+    <div class="pq">월 100만원대인데 시설은 강남대성보다 낫더군요.<b>— K군 학부모</b></div>
+    <div class="pq">아이가 도심이라 답답해하지 않아요.<b>— L양 학부모</b></div>
+    <div class="pq">개인 화장실 하나로 사춘기 딸 스트레스가 사라졌습니다.<b>— J양 학부모</b></div>
+  </div>
+</section>
+
+<!-- ============ 7. SATISFACTION ============ -->
+<section class="sat">
+  <div class="stars">★★★★★</div>
+  <p class="label">재학생 만족도</p>
+  <div class="big">98.4<small>%</small></div>
+  <p class="label">실제 재학생 익명 설문 기반</p>
+
+  <div class="sat-grid">
+    <div class="sat-cell"><div class="l">1인실 만족도</div><div class="n">99.1%</div></div>
+    <div class="sat-cell"><div class="l">식사 만족도</div><div class="n">96.8%</div></div>
+    <div class="sat-cell"><div class="l">재추천 의향</div><div class="n">97.5%</div></div>
+  </div>
+  <div class="stamp">설문 표본 N=312명 · 2025 재학생</div>
+</section>
+
+<!-- ============ 8. OPS ============ -->
+<section class="ops">
+  <h2>학생을 가두지 않고,<br/>관리합니다</h2>
+  <p class="sub">학부모님이 가장 궁금해하는<br/>운영 시스템을 공개합니다.</p>
+
+  <div class="ops-grid">
+    <div class="ops-card">
+      <span class="role">원장 · 교육 총괄</span>
+      <h3>재수 교육 15년 경력</h3>
+      <p>대치동 현장에서 검증된 교육 철학으로 학생 한 명 한 명의 입시 전략을 직접 설계합니다.</p>
+      <span class="pill">15년+</span>
+    </div>
+    <div class="ops-card">
+      <span class="role">사감 · 24시간 상주</span>
+      <h3>야간 비상상황 즉시 대응</h3>
+      <p>건강·정서·돌발 상황 대응. 부모님께 24시간 직통 연락 라인을 제공합니다.</p>
+      <span class="pill">24h Live</span>
+    </div>
+    <div class="ops-card">
+      <span class="role">학습관리 매니저</span>
+      <h3>매니저 1명당 학생 12명</h3>
+      <p>업계 평균 1:25 대비 절반 수준. 진짜 1:1 관리가 가능한 비율입니다.</p>
+      <span class="pill">업계 1/2</span>
+    </div>
+  </div>
+
+  <div class="ops-foot">
+    <b>주간 학부모 리포트</b>
+    <p>매주 학습 진도·모의고사·생활 컨디션을 학부모님께 발송합니다.</p>
+    <a href="#cta" class="btn btn-dark">샘플 리포트 받아보기</a>
+  </div>
+</section>
+
+<!-- ============ 9. FINAL CTA + LEAD FORM ============ -->
+<section class="final" id="cta">
+  <div class="final-left">
+    <span class="eyebrow" style="color:var(--red-l)">2026 1기 모집</span>
+    <h2>1인실 잔여 <span class="red">7석</span>.<br/>다음 기수는 <span class="red">6개월 뒤</span>입니다.</h2>
+    <p class="lead">정원이 마감되면 다음 모집까지<br/>6개월을 기다리셔야 합니다.</p>
+
+    <div class="final-price">
+      <div class="old">월 300만원</div>
+      <div class="new">100만원대<small>부터</small><span class="cut">−50%</span></div>
+    </div>
+
+    <div class="final-scarcity">
+      <span class="dot"></span>1인실 잔여 <b style="color:#fff;margin:0 4px">7석</b>· 선착순 마감
+    </div>
+    <p class="final-warn">* 잔여석은 상담 진행 순서에 따라 변동될 수 있습니다.<br/>본 페이지의 가격·혜택은 2026 1기 모집 기준입니다.</p>
+  </div>
+
+  <form class="form" onsubmit="event.preventDefault(); alert('상담 신청이 접수되었습니다. 영업일 기준 24시간 내 연락드리겠습니다.');">
+    <h3>무료 학습진단 신청</h3>
+    <p class="fsub">접수 후 24시간 내 1:1 상담 연락드립니다.</p>
+
+    <div class="field">
+      <label>이름</label>
+      <input type="text" required placeholder="홍길동" />
+    </div>
+    <div class="field">
+      <label>학년 / N수</label>
+      <select required>
+        <option value="">선택해주세요</option>
+        <option>고3</option>
+        <option>재수 (1수)</option>
+        <option>N수 (2수 이상)</option>
+        <option>자퇴·검정</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>최근 모의고사 등급</label>
+      <select required>
+        <option value="">선택해주세요</option>
+        <option>1~2등급</option>
+        <option>3~4등급</option>
+        <option>5~6등급</option>
+        <option>7등급 이하</option>
+      </select>
+    </div>
+    <div class="field">
+      <label>연락처 (휴대폰)</label>
+      <input type="tel" required placeholder="010-0000-0000" />
+    </div>
+    <div class="field">
+      <label>상담 가능 시간 (선택)</label>
+      <input type="text" placeholder="예: 평일 저녁 7시 이후" />
+    </div>
+
+    <label class="agree">
+      <input type="checkbox" required />
+      <span>개인정보 수집·이용에 동의합니다.<br/>(상담 목적, 6개월 보관)</span>
+    </label>
+
+    <button type="submit" class="btn btn-cta">무료 학습진단 신청하기</button>
+    <div class="form-or">또는</div>
+    <a href="#" class="btn btn-kakao">카카오톡으로 1:1 상담</a>
+  </form>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <h2>자주 묻는 질문</h2>
+  <p class="sub">의사결정 전, 이것만은 확인하세요.</p>
+  <div class="faq">
+    <details><summary>월 100만원대에 정말 모든 게 포함되나요?</summary>
+      <p>학습비, 1인실 기숙사, 식사 3식, 학습관리가 포함됩니다. 일부 부가 비용(교재, 외부 모의고사 등)은 별도이며, 상담 시 투명하게 안내드립니다.</p></details>
+    <details><summary>1인실 방 크기와 가구 구성은요?</summary>
+      <p>1인 학습·취침에 최적화된 원룸형 구조입니다. 접이식 침대, 인체공학 책상·의자, 1인 냉장고·세탁기, 개인 화장실이 기본 제공됩니다.</p></details>
+    <details><summary>외출·면회·외박은 가능한가요?</summary>
+      <p>주말 면회 자유, 의무학습 시간 외 사전 신청을 통해 외출이 가능합니다. 도심 입지로 부모님 면회·외진료가 매우 편리합니다.</p></details>
+    <details><summary>중도 퇴소 시 환불 정책이 있나요?</summary>
+      <p>네, 학원법 기준에 따른 투명한 환불 규정을 운영합니다. 상담 시 환불 정책서를 함께 안내드립니다.</p></details>
+    <details><summary>남녀 동선이 분리되어 있나요?</summary>
+      <p>E동(남) / W동(여)으로 기숙사 동선이 완전히 분리되어 있습니다.</p></details>
+    <details><summary>잔여 7석은 정말인가요?</summary>
+      <p>2026 1기 모집 기준이며, 상담 진행 순서에 따라 매일 변동됩니다. 정확한 잔여석은 상담 시 실시간 확인해드립니다.</p></details>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <b>스파르타샘 대치팀 학원 · 안산센터</b>
+  경기 안산시 단원구 산단로 232 (9F · 11F)<br/>
+  대표 070-4138-2675
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky">
+  <a href="#cta" class="btn btn-kakao">카톡 상담</a>
+  <a href="#cta" class="btn btn-cta">무료 진단 신청</a>
+</div>
+
+</body>
+</html>
